@@ -1,0 +1,14 @@
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
+POSTGRES_USER = os.environ['POSTGRES_USER']
+POSTGRES_DB = os.environ['POSTGRES_DB']
+REDIS_HOST = os.environ['REDIS_HOST']
+REDIS_PORT = os.environ['REDIS_PORT']
+
+SQLALCHEMY_DATABASE_URL = f'postgresql+asyncpg://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_DB}:5432/{POSTGRES_DB}'
+TEST_DATABASE_URL = f'postgresql+asyncpg://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_DB}:5432/{POSTGRES_DB}'
